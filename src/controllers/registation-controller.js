@@ -4,7 +4,7 @@ const { Pool,Client } = require('pg');
 
 
 const client = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: process.env.HEROKU_POSTGRESQL_JADE_URL,
   ssl: {
     rejectUnauthorized: false
   }
