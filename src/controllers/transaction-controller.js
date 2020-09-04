@@ -3,7 +3,7 @@ const { Pool,Client } = require('pg');
 
 
 const client = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: process.env.HEROKU_POSTGRESQL_JADE_URL,
   ssl: {
     rejectUnauthorized: false
   }
@@ -59,7 +59,7 @@ module.exports = {
 	
        
     },
-    withdraw: (req, res) => {
+    withdraw: async (req, res) => {
 
         try {
             await client.query('begin');
@@ -104,7 +104,7 @@ module.exports = {
 	
        
     },
-    transactions: (req, res) => {
+    transactions: async (req, res) => {
 
         const { start_date, end_date } = req.query;
   try {
