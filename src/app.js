@@ -15,18 +15,9 @@ const wss = new WebSocket.Server({
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 const registationRoute = require('./routes/registation');
+const tradeRoute = require('./routes/trade');
+const transactionRoute = require('./routes/transaction');
 const helmet = require('helmet');
 const cors = require('cors');
 
@@ -38,6 +29,9 @@ NODE_ENV !== "production" ? app.use(morgan('dev')) : app.use(morgan('combined'))
 app.use(helmet());
 app.use(cors());
 app.use('/api/registation', registationRoute);
+app.use('/api/trade', tradeRoute);
+app.use('/api/trade', transactionRoute);
+
 
 
 
