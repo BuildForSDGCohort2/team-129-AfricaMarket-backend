@@ -30,7 +30,7 @@ app.use(helmet());
 app.use(cors());
 app.use('/api/registation', registationRoute);
 app.use('/api/trade', tradeRoute);
-app.use('/api/trade', transactionRoute);
+app.use('/api/transaction', transactionRoute);
 
 
 
