@@ -33,6 +33,13 @@ app.use('/api/trade', tradeRoute);
 app.use('/api/transaction', transactionRoute);
 
 
+app.set('views', __dirname + '/views');
+app.engine('html', require('ejs').renderFile);
+app.get("/",function(req,res){
+  res.render('index.html');
+})
+
+
 
 
 //app.listen(process.env.PORT || 3000);
